@@ -1,7 +1,7 @@
 
 # Get Master Public Key
 - hosts: master 
-  remote_user: root
+  become: yes
   vars_files:
    - vars/user.yml
    - vars/var_basic.yml
@@ -10,7 +10,7 @@
     - fetch_public_key
 
 - hosts: workers 
-  remote_user: root
+  become: yes
   vars_files:
    - vars/user.yml
    - vars/var_basic.yml

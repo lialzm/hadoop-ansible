@@ -1,0 +1,16 @@
+---
+- name: Install OpenJdk
+  apt: 
+    name:  
+      - "openjdk-8-jdk"
+    state: present
+    update_cache: yes
+
+- name: Copy Java Home Script
+  template: 
+    src: java_home.sh
+    dest: /etc/profile.d
+    mode: "0777"
+
+- name: Set Java Home Script
+  shell: /etc/profile.d/java_home.sh

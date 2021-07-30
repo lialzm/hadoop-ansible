@@ -1,5 +1,5 @@
 - hosts: master 
-  remote_user: root
+  become: yes
   vars_files:
    - vars/user.yml
    - vars/var_basic.yml
